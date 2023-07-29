@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import CounterView from './features/counter/counterView';
 
 function App() {
-  return <div>react redux toolkit fetch</div>;
+  return (
+    <Fragment>
+      <CounterView />
+    </Fragment>
+  );
 }
 
 export default App;
