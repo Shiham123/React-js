@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import Core from './Routes/core';
 
 function App() {
-  return <div></div>;
+  return (
+    <Fragment>
+      <Core />
+    </Fragment>
+  );
 }
 
 export default App;
