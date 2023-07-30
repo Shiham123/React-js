@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addBooks } from './booksSlice';
+import { useNavigate } from 'react-router-dom';
 
 const AddBook = () => {
   const [title, setTitle] = useState(''),
@@ -8,6 +9,7 @@ const AddBook = () => {
 
   const numberOfBooks = useSelector((state) => state.booksReducer.length);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleInputChange = (event) => {
     setTitle(event.target.value);
@@ -21,6 +23,7 @@ const AddBook = () => {
     event.preventDefault();
     const book = { id: numberOfBooks + 1, title, author };
     dispatch(addBooks(book));
+    navigate('/show-books', { replace: false });
   };
 
   return (

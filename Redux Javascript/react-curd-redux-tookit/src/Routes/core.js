@@ -5,6 +5,7 @@ import ErrorPage from '../Pages/error';
 import Navbar from '../Layouts/navbar';
 import BooksView from '../Books/booksView';
 import AddBook from '../Books/addBook';
+import EditBook from '../Books/editBook';
 
 const Core = () => {
   return (
@@ -14,6 +15,7 @@ const Core = () => {
         <Route path="/" element={<Home />} />
         <Route path="/show-books" element={<BooksView />} />
         <Route path="/add-books" element={<AddBook />} />
+        <Route path="/edit-book" element={<EditBook />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
     </BrowserRouter>
