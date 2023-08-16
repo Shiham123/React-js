@@ -6,16 +6,15 @@ import { updateBook } from './booksSlice';
 const EditBook = () => {
   const location = useLocation();
 
-  const [id, setId] = useState(location.state.id),
-    [title, setTitle] = useState(location.state.title),
-    [author, setAuthor] = useState(location.state.author);
+  const [title, setTitle] = useState(location.state.title);
+  const [author, setAuthor] = useState(location.state.author);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(updateBook({ id, title, author }));
+    dispatch(updateBook({ id: location.state.id, title, author }));
     navigate('/show-books', { replace: true });
   };
 
